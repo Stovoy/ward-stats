@@ -6,8 +6,12 @@ import numpy
 
 def generate_stills(title):
     os.makedirs('stills/%s/raw' % title)
+    file = 'videos/%s.mp4' % title
+    if not os.path.isfile(file):
+        file = 'videos/%s.mkv' % title
+
     command = ['ffmpeg',
-               '-i', 'videos/%s.mp4' % title,
+               '-i', file,
                '-f', 'image2pipe',
                '-pix_fmt', 'rgb24',
                '-vcodec', 'rawvideo', '-']
