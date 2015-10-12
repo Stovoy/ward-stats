@@ -1,0 +1,9 @@
+.idea/
+*.iml
+*.pyc
+
+videos/
+stills/
+cut/
+preprocessed/
+processed/
